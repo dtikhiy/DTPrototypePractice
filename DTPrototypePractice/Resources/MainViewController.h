@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  DTPrototypePractice
 //
 //  Created by Dmytro Tykhyi on 1/20/17.

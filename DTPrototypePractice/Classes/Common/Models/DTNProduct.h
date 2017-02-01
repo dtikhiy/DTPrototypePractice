@@ -16,7 +16,7 @@
 @property (strong, nonatomic) NSString *prodName;
 @property (assign, nonatomic) BOOL isNewArrival;
 @property (assign, nonatomic) DTNProdInfoLabelTypes infoLabel;
-@property (strong, nonatomic) NSString *imageURL;
+@property (strong, nonatomic) NSURL *imageURL;
 @property (strong, nonatomic) NSString *price;
 
 @end

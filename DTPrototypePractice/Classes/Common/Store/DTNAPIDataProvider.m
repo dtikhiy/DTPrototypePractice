@@ -50,7 +50,11 @@ static NSString *const kJSONProdPrice = @"listprice";
             
             [products addObject:currProduct];
             NSArray *imgPath = [NSArray arrayWithArray:[dict valueForKey:kJSONProdImagePath]];
-            currProduct.imageURL = imgPath[0];
+            NSURLComponents *urlComponent = [[NSURLComponents alloc] initWithString:imgPath[0]];
+            urlComponent.scheme = @"http";
+    
+            currProduct.imageURL = urlComponent.URL;
+            
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{

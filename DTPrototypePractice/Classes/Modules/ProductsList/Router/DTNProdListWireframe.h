@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+@class DTNProdListPresenter;
 
 @interface DTNProdListWireframe : NSObject
+
+@property (weak, nonatomic) DTNProdListPresenter *presenter;
 
 @end

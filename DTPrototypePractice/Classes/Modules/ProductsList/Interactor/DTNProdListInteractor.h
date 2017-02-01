@@ -11,6 +11,8 @@
 
 @interface DTNProdListInteractor : NSObject
 
-@property (strong, nonatomic) DTNProdListPresenter *prodListPresenter;
+@property (weak, nonatomic) DTNProdListPresenter *presenter;
+
+-(void) fetchProductsFromAPI;
 
 @end

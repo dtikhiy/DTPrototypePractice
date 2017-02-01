@@ -7,7 +7,18 @@
 //
 
 #import "DTNProdListInteractor.h"
+#import "DTNAPIDataProvider.h"
+#import "DTNProdListPresenter.h"
 
 @implementation DTNProdListInteractor
+
+-(void) fetchProductsFromAPI {
+    
+    DTNAPIDataProvider *api = [[DTNAPIDataProvider alloc] init];
+    
+    [api  fetchProductsFromStorage:^(NSArray *pr) {
+        [self.presenter fetchedProductsFromAPI:pr];
+    }];
+}
 
 @end

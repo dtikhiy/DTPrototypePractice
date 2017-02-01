@@ -7,6 +7,7 @@
 //
 
 #import "DTNProdListWireframe.h"
+#import "DTNProductListVC.h"
 
 @implementation DTNProdListWireframe
 

@@ -1,39 +1,38 @@
 //
-//  ProductsCollectionViewController.m
+//  DTNProductListVC.m
 //  DTPrototypePractice
 //
 //  Created by Dmytro Tykhyi on 1/20/17.
 //  Copyright © 2017 Dmytro Tykhyi. All rights reserved.
 //
 
-#import "ProductsCollectionViewController.h"
-#import "ProductCollectionViewCell.h"
+#import "DTNProductListVC.h"
+#import "DTNProductCell.h"
 #import "DTNAPIDataProvider.h"
 #import "DTNProduct.h"
-#import "UIImage+CustomImage.h"
 
-@interface ProductsCollectionViewController () <UICollectionViewDelegateFlowLayout>
-
+@interface DTNProductListVC () <UICollectionViewDelegateFlowLayout>
+@property (strong, nonatomic) NSArray *productsData;
 @end
 
-@implementation ProductsCollectionViewController
+@implementation DTNProductListVC
 
 static NSString * const reuseIdentifier = @"ProductCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self fetchProducts];
-    
     // Setup collection
     self.collectionView.backgroundColor = [UIColor whiteColor];
     
     // Register cell classes
-     [self.collectionView registerNib:[UINib nibWithNibName:@"ProductCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+     [self.collectionView registerNib:[UINib nibWithNibName:@"DTNProductCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
 }
 
--(void)viewDidAppear:(BOOL)animated {
-    [self showNoProductsPopupMessage];
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self.eventHandler updateData];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -43,22 +42,13 @@ static NSString * const reuseIdentifier = @"ProductCell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.products count];
+    return [self.productsData count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    DTNProduct *prod = [self.products objectAtIndex:indexPath.row];
-    
-    cell.isNewArrival = prod.isNewArrival;
-    
-    NSURLComponents *urlComponent = [[NSURLComponents alloc] initWithString:prod.imageURL];
-    urlComponent.scheme = @"http";
-    
-    [cell.productImage loadImageWith:urlComponent.URL];
-    cell.displaynameLabel.text = prod.prodName;
-    cell.priceLabel.text = prod.price;
+    DTNProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    DTNProduct *prod = [self.productsData objectAtIndex:indexPath.row];
+    [cell updateCellWithProduct:prod];
     
     return cell;
 }
@@ -70,7 +60,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
     CGFloat width = [[UIScreen mainScreen] bounds].size.width;
     CGFloat widthPadding = 15;
     CGFloat height = [[UIScreen mainScreen] bounds].size.height;
-    CGFloat heightPadding = 20;
+    CGFloat heightPadding = 10;
     
     // Calculation of cell size
     return CGSizeMake((width / 2) - widthPadding, (height / 2) - heightPadding);
@@ -80,26 +70,23 @@ static NSString * const reuseIdentifier = @"ProductCell";
     return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 
-- (void)fetchProducts {
-    DTNAPIDataProvider *api = [[DTNAPIDataProvider alloc] init];
-    
-    [api  fetchProductsFromStorage:^(NSArray *pr) {
-        self.products = pr;
-        [self.collectionView reloadData];
-    }];
-}
-
 #pragma mark - Viper
 
 -(void) showNoProductsPopupMessage {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"No Products"
-                                                                   message:@"No Products"
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Response is empty"
+                                                                   message:@"API returned no products."
                                                             preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     
     [alert addAction:action];
     
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void) updateProductWithData:(NSArray*) products {
+    self.productsData = products;
+    
+    [self.collectionView reloadData];
 }
 
 

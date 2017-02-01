@@ -1,5 +1,5 @@
 //
-//  ProductCollectionViewCell.h
+//  DTNProductCell.h
 //  DTPrototypePractice
 //
 //  Created by Dmytro Tykhyi on 1/20/17.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class DTNProduct;
 
-@interface ProductCollectionViewCell : UICollectionViewCell
+@interface DTNProductCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
 @property (weak, nonatomic) IBOutlet UILabel *arrivalLabel;

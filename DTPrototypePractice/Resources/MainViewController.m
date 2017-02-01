@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  DTPrototypePractice
 //
 //  Created by Dmytro Tykhyi on 1/20/17.
@@ -7,9 +7,12 @@
 //
 
 #import "MainViewController.h"
-#import "ProductsCollectionViewController.h"
+#import "DTNProductListVC.h"
+#import "ProductListModuleAssembler.h"
 
 @interface MainViewController ()
+
+@property (strong, nonatomic) ProductListModuleAssembler *prodListModule;
 
 @end
 
@@ -24,8 +27,9 @@
 }
 
 -(void) handleTapGesture: (UITapGestureRecognizer*) sender {
-    ProductsCollectionViewController *productsView = [[ProductsCollectionViewController alloc] initWithNibName: @"ProductsCollectionViewController" bundle:nil];
     
+    DTNProductListVC *productsView = [[DTNProductListVC alloc] initWithNibName: @"DTNProductListVC" bundle:nil];
+    self.prodListModule = [[ProductListModuleAssembler alloc] initWithVC:productsView];
     [self showViewController:productsView sender:self];
 }
 

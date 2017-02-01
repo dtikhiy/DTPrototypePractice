@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DTNProdListInteractorOutput.h"
+#import "DTNProdListModuleInterface.h"
 
 @class DTNProdListInteractor;
+@class DTNProdListWireframe;
+@class DTNProductListVC;
 
-@interface DTNProdListPresenter : NSObject
+@interface DTNProdListPresenter : NSObject <DTNProdListInteractorOutput, DTNProdListModuleInterface>
 
-@property (weak, nonatomic) DTNProdListInteractor *prodListInteractor;
-
--(void) updateCellWithData;
+@property (strong, nonatomic) DTNProdListInteractor *interactor;
+@property (strong, nonatomic) DTNProdListWireframe *wireframe;
+@property (strong, nonatomic) DTNProductListVC *userInterface;
 
 @end

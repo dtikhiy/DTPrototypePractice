@@ -1,15 +1,16 @@
 //
-//  ProductCollectionViewCell.m
+//  DTNProductCell.m
 //  DTPrototypePractice
 //
 //  Created by Dmytro Tykhyi on 1/20/17.
 //  Copyright © 2017 Dmytro Tykhyi. All rights reserved.
 //
 
-#import "ProductCollectionViewCell.h"
+#import "DTNProductCell.h"
 #import "DTNProduct.h"
+#import "UIImage+CustomImage.h"
 
-@implementation ProductCollectionViewCell
+@implementation DTNProductCell
 
 @synthesize infoLabelHeightConstraints;
 
@@ -26,6 +27,8 @@
 - (void) updateCellWithProduct:(DTNProduct*) product {
     self.priceLabel.text = product.price;
     self.displaynameLabel.text = product.prodName;
+    [self.productImage loadImageWith:product.imageURL];
+    self.isNewArrival = product.isNewArrival;
 }
 
 - (void)awakeFromNib {
