@@ -9,12 +9,22 @@
 /* Begin PBXBuildFile section */
 		222EA5F71E32DA5800415F2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA5F61E32DA5800415F2D /* main.m */; };
 		222EA5FA1E32DA5800415F2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA5F91E32DA5800415F2D /* AppDelegate.m */; };
-		222EA5FD1E32DA5800415F2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA5FC1E32DA5800415F2D /* ViewController.m */; };
 		222EA6001E32DA5800415F2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222EA5FE1E32DA5800415F2D /* Main.storyboard */; };
 		222EA6021E32DA5800415F2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222EA6011E32DA5800415F2D /* Assets.xcassets */; };
 		222EA6051E32DA5800415F2D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222EA6031E32DA5800415F2D /* LaunchScreen.storyboard */; };
 		222EA6101E32DA5800415F2D /* DTPrototypePracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA60F1E32DA5800415F2D /* DTPrototypePracticeTests.m */; };
 		222EA61B1E32DA5800415F2D /* DTPrototypePracticeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA61A1E32DA5800415F2D /* DTPrototypePracticeUITests.m */; };
+		222EA6311E32DF1100415F2D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA6301E32DF1100415F2D /* MainViewController.m */; };
+		222EA6391E32E01B00415F2D /* ProductsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA6371E32E01B00415F2D /* ProductsCollectionViewController.m */; };
+		222EA63A1E32E01B00415F2D /* ProductsCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222EA6381E32E01B00415F2D /* ProductsCollectionViewController.xib */; };
+		222EA63E1E32E04500415F2D /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA63C1E32E04500415F2D /* ProductCollectionViewCell.m */; };
+		222EA63F1E32E04500415F2D /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222EA63D1E32E04500415F2D /* ProductCollectionViewCell.xib */; };
+		222EA6461E347B2C00415F2D /* DTNProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA6451E347B2C00415F2D /* DTNProduct.m */; };
+		2275B4E41E3B2D3700360514 /* DTNAPIDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275B4E31E3B2D3700360514 /* DTNAPIDataProvider.m */; };
+		2275B5061E3F14BE00360514 /* DTNProdListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275B5051E3F14BE00360514 /* DTNProdListPresenter.m */; };
+		2275B5091E3F14CE00360514 /* DTNProdListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275B5081E3F14CE00360514 /* DTNProdListInteractor.m */; };
+		2275B50C1E3F14E700360514 /* DTNProdListWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275B50B1E3F14E700360514 /* DTNProdListWireframe.m */; };
+		22A8921A1E37398500C2625A /* UIImage+CustomImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A892191E37398500C2625A /* UIImage+CustomImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,18 +49,38 @@
 		222EA5F61E32DA5800415F2D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		222EA5F81E32DA5800415F2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		222EA5F91E32DA5800415F2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		222EA5FB1E32DA5800415F2D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		222EA5FC1E32DA5800415F2D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		222EA5FF1E32DA5800415F2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		222EA6011E32DA5800415F2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		222EA6011E32DA5800415F2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		222EA6041E32DA5800415F2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		222EA6061E32DA5800415F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		222EA6061E32DA5800415F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		222EA60B1E32DA5800415F2D /* DTPrototypePracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DTPrototypePracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		222EA60F1E32DA5800415F2D /* DTPrototypePracticeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTPrototypePracticeTests.m; sourceTree = "<group>"; };
 		222EA6111E32DA5800415F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		222EA6161E32DA5800415F2D /* DTPrototypePracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DTPrototypePracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		222EA61A1E32DA5800415F2D /* DTPrototypePracticeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DTPrototypePracticeUITests.m; sourceTree = "<group>"; };
 		222EA61C1E32DA5800415F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		222EA62F1E32DF1100415F2D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Resources/MainViewController.h; sourceTree = "<group>"; };
+		222EA6301E32DF1100415F2D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Resources/MainViewController.m; sourceTree = "<group>"; };
+		222EA6361E32E01B00415F2D /* ProductsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductsCollectionViewController.h; sourceTree = "<group>"; };
+		222EA6371E32E01B00415F2D /* ProductsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductsCollectionViewController.m; sourceTree = "<group>"; };
+		222EA6381E32E01B00415F2D /* ProductsCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductsCollectionViewController.xib; sourceTree = "<group>"; };
+		222EA63B1E32E04500415F2D /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
+		222EA63C1E32E04500415F2D /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
+		222EA63D1E32E04500415F2D /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		222EA6441E347B2C00415F2D /* DTNProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProduct.h; sourceTree = "<group>"; };
+		222EA6451E347B2C00415F2D /* DTNProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProduct.m; sourceTree = "<group>"; };
+		222EA64B1E3480E400415F2D /* DTNProdInfoLabelTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTNProdInfoLabelTypes.h; sourceTree = "<group>"; };
+		2275B4E11E3B2CA000360514 /* DTNProductsFetching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProductsFetching.h; sourceTree = "<group>"; };
+		2275B4E21E3B2D3700360514 /* DTNAPIDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNAPIDataProvider.h; sourceTree = "<group>"; };
+		2275B4E31E3B2D3700360514 /* DTNAPIDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNAPIDataProvider.m; sourceTree = "<group>"; };
+		2275B5041E3F14BE00360514 /* DTNProdListPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProdListPresenter.h; sourceTree = "<group>"; };
+		2275B5051E3F14BE00360514 /* DTNProdListPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProdListPresenter.m; sourceTree = "<group>"; };
+		2275B5071E3F14CE00360514 /* DTNProdListInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProdListInteractor.h; sourceTree = "<group>"; };
+		2275B5081E3F14CE00360514 /* DTNProdListInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProdListInteractor.m; sourceTree = "<group>"; };
+		2275B50A1E3F14E700360514 /* DTNProdListWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProdListWireframe.h; sourceTree = "<group>"; };
+		2275B50B1E3F14E700360514 /* DTNProdListWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProdListWireframe.m; sourceTree = "<group>"; };
+		22A892181E37398500C2625A /* UIImage+CustomImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CustomImage.h"; sourceTree = "<group>"; };
+		22A892191E37398500C2625A /* UIImage+CustomImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CustomImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +131,12 @@
 		222EA5F41E32DA5800415F2D /* DTPrototypePractice */ = {
 			isa = PBXGroup;
 			children = (
+				2275B4DC1E3B1E2200360514 /* Classes */,
 				222EA5F81E32DA5800415F2D /* AppDelegate.h */,
 				222EA5F91E32DA5800415F2D /* AppDelegate.m */,
-				222EA5FB1E32DA5800415F2D /* ViewController.h */,
-				222EA5FC1E32DA5800415F2D /* ViewController.m */,
-				222EA5FE1E32DA5800415F2D /* Main.storyboard */,
-				222EA6011E32DA5800415F2D /* Assets.xcassets */,
-				222EA6031E32DA5800415F2D /* LaunchScreen.storyboard */,
-				222EA6061E32DA5800415F2D /* Info.plist */,
+				222EA62F1E32DF1100415F2D /* MainViewController.h */,
+				222EA6301E32DF1100415F2D /* MainViewController.m */,
+				222EA62E1E32DEF900415F2D /* Resources */,
 				222EA5F51E32DA5800415F2D /* Supporting Files */,
 			);
 			path = DTPrototypePractice;
@@ -138,6 +166,156 @@
 				222EA61C1E32DA5800415F2D /* Info.plist */,
 			);
 			path = DTPrototypePracticeUITests;
+			sourceTree = "<group>";
+		};
+		222EA62E1E32DEF900415F2D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				222EA5FE1E32DA5800415F2D /* Main.storyboard */,
+				222EA6011E32DA5800415F2D /* Assets.xcassets */,
+				222EA6031E32DA5800415F2D /* LaunchScreen.storyboard */,
+				222EA6061E32DA5800415F2D /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		222EA6471E34805A00415F2D /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				222EA64B1E3480E400415F2D /* DTNProdInfoLabelTypes.h */,
+			);
+			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		2275B4DC1E3B1E2200360514 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2275B4DD1E3B269100360514 /* Common */,
+				2275B4FB1E3F004E00360514 /* Modules */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2275B4DD1E3B269100360514 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2275B4E01E3B2B3E00360514 /* Store */,
+				222EA6471E34805A00415F2D /* Enumerations */,
+				2275B4DF1E3B287100360514 /* Models */,
+				2275B4DE1E3B26A900360514 /* Categories */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2275B4DE1E3B26A900360514 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				22A892181E37398500C2625A /* UIImage+CustomImage.h */,
+				22A892191E37398500C2625A /* UIImage+CustomImage.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		2275B4DF1E3B287100360514 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				222EA6441E347B2C00415F2D /* DTNProduct.h */,
+				222EA6451E347B2C00415F2D /* DTNProduct.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2275B4E01E3B2B3E00360514 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				2275B4E11E3B2CA000360514 /* DTNProductsFetching.h */,
+				2275B4E21E3B2D3700360514 /* DTNAPIDataProvider.h */,
+				2275B4E31E3B2D3700360514 /* DTNAPIDataProvider.m */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		2275B4FB1E3F004E00360514 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2275B4FC1E3F008A00360514 /* ProductsList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2275B4FC1E3F008A00360514 /* ProductsList */ = {
+			isa = PBXGroup;
+			children = (
+				2275B5011E3F02EE00360514 /* Router */,
+				2275B5001E3F02D100360514 /* Interactor */,
+				2275B4FF1E3F02BD00360514 /* Presenter */,
+				2275B4FE1E3F02AA00360514 /* View */,
+				2275B4FD1E3F027A00360514 /* Assembly */,
+			);
+			path = ProductsList;
+			sourceTree = "<group>";
+		};
+		2275B4FD1E3F027A00360514 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		2275B4FE1E3F02AA00360514 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2275B5031E3F032600360514 /* ProductCell */,
+				2275B5021E3F030700360514 /* ProductList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2275B4FF1E3F02BD00360514 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2275B5041E3F14BE00360514 /* DTNProdListPresenter.h */,
+				2275B5051E3F14BE00360514 /* DTNProdListPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2275B5001E3F02D100360514 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				2275B5071E3F14CE00360514 /* DTNProdListInteractor.h */,
+				2275B5081E3F14CE00360514 /* DTNProdListInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		2275B5011E3F02EE00360514 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				2275B50A1E3F14E700360514 /* DTNProdListWireframe.h */,
+				2275B50B1E3F14E700360514 /* DTNProdListWireframe.m */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		2275B5021E3F030700360514 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				222EA6361E32E01B00415F2D /* ProductsCollectionViewController.h */,
+				222EA6371E32E01B00415F2D /* ProductsCollectionViewController.m */,
+				222EA6381E32E01B00415F2D /* ProductsCollectionViewController.xib */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		2275B5031E3F032600360514 /* ProductCell */ = {
+			isa = PBXGroup;
+			children = (
+				222EA63B1E32E04500415F2D /* ProductCollectionViewCell.h */,
+				222EA63C1E32E04500415F2D /* ProductCollectionViewCell.m */,
+				222EA63D1E32E04500415F2D /* ProductCollectionViewCell.xib */,
+			);
+			path = ProductCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +427,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222EA63A1E32E01B00415F2D /* ProductsCollectionViewController.xib in Resources */,
 				222EA6051E32DA5800415F2D /* LaunchScreen.storyboard in Resources */,
+				222EA63F1E32E04500415F2D /* ProductCollectionViewCell.xib in Resources */,
 				222EA6021E32DA5800415F2D /* Assets.xcassets in Resources */,
 				222EA6001E32DA5800415F2D /* Main.storyboard in Resources */,
 			);
@@ -276,8 +456,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222EA5FD1E32DA5800415F2D /* ViewController.m in Sources */,
+				2275B4E41E3B2D3700360514 /* DTNAPIDataProvider.m in Sources */,
+				22A8921A1E37398500C2625A /* UIImage+CustomImage.m in Sources */,
+				2275B5091E3F14CE00360514 /* DTNProdListInteractor.m in Sources */,
+				222EA6461E347B2C00415F2D /* DTNProduct.m in Sources */,
+				222EA6391E32E01B00415F2D /* ProductsCollectionViewController.m in Sources */,
+				2275B5061E3F14BE00360514 /* DTNProdListPresenter.m in Sources */,
+				2275B50C1E3F14E700360514 /* DTNProdListWireframe.m in Sources */,
+				222EA63E1E32E04500415F2D /* ProductCollectionViewCell.m in Sources */,
 				222EA5FA1E32DA5800415F2D /* AppDelegate.m in Sources */,
+				222EA6311E32DF1100415F2D /* MainViewController.m in Sources */,
 				222EA5F71E32DA5800415F2D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +508,7 @@
 				222EA5FF1E32DA5800415F2D /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		222EA6031E32DA5800415F2D /* LaunchScreen.storyboard */ = {
@@ -328,6 +517,7 @@
 				222EA6041E32DA5800415F2D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -429,6 +619,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EXA34F332D;
 				INFOPLIST_FILE = DTPrototypePractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DTN.DTPrototypePractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -441,6 +632,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EXA34F332D;
 				INFOPLIST_FILE = DTPrototypePractice/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DTN.DTPrototypePractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +708,7 @@
 				222EA6211E32DA5800415F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		222EA6221E32DA5800415F2D /* Build configuration list for PBXNativeTarget "DTPrototypePracticeTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +717,7 @@
 				222EA6241E32DA5800415F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		222EA6251E32DA5800415F2D /* Build configuration list for PBXNativeTarget "DTPrototypePracticeUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +726,7 @@
 				222EA6271E32DA5800415F2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
