@@ -20,6 +20,6 @@
 
 @property (assign, nonatomic) BOOL isNewArrival;
 
-- (void) updateCellWithProduct:(DTNProduct*) product;
+- (void) updateCellWithProductData:(DTNProduct*) product;
 
 @end

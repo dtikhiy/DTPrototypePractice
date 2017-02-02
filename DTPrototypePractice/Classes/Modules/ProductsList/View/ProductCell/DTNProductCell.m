@@ -14,17 +14,16 @@
 
 @synthesize infoLabelHeightConstraints;
 
-// Set newArrival label
--(void)setIsNewArrival:(BOOL)isNewArrival {
-    if (isNewArrival) {
-        self.self.arrivalLabel.text = @"NEW";
+
+-(void) showProductLabel:(BOOL) option {
+    if(option) {
         self.infoLabelHeightConstraints.constant = 17;
     } else {
         self.infoLabelHeightConstraints.constant = 0;
     }
 }
 
-- (void) updateCellWithProduct:(DTNProduct*) product {
+- (void) updateCellWithProductData:(DTNProduct*) product {
     self.priceLabel.text = product.price;
     self.displaynameLabel.text = product.prodName;
     [self.productImage loadImageWith:product.imageURL];

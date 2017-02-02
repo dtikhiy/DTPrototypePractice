@@ -21,6 +21,9 @@ static NSString *const kJSONProdAttrNewArrival = @"newArrival";
 static NSString *const kJSONProdImagePath = @"imgPath";
 static NSString *const kJSONProdPrice = @"listprice";
 
+/*!
+ @brief Implementation for the DTNProductsFetching protocol method
+ */
 
 -(void)fetchProductsFromStorage:(void (^)(NSArray*))complition {
     
@@ -36,30 +39,33 @@ static NSString *const kJSONProdPrice = @"listprice";
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        if (!error) {
         
-        for (NSDictionary *dict in json) {
-            DTNProduct *currProduct = [[DTNProduct alloc] init];
-            currProduct.prodName = [dict valueForKey:kJSONProdName];
+            NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             
-            NSDictionary *attributes = [NSDictionary dictionaryWithDictionary:[dict valueForKey:kJSONProdAttributes]];
-            NSString *isNewArrival = [attributes valueForKey:kJSONProdAttrNewArrival];
-            currProduct.isNewArrival = [isNewArrival boolValue];
-            
-            currProduct.price = [dict valueForKey:kJSONProdPrice];
-            
-            [products addObject:currProduct];
-            NSArray *imgPath = [NSArray arrayWithArray:[dict valueForKey:kJSONProdImagePath]];
-            NSURLComponents *urlComponent = [[NSURLComponents alloc] initWithString:imgPath[0]];
-            urlComponent.scheme = @"http";
-    
-            currProduct.imageURL = urlComponent.URL;
-            
-        }
+            for (NSDictionary *dict in json) {
+                DTNProduct *currProduct = [[DTNProduct alloc] init];
+                currProduct.prodName = [dict valueForKey:kJSONProdName];
+                
+                NSDictionary *attributes = [NSDictionary dictionaryWithDictionary:[dict valueForKey:kJSONProdAttributes]];
+                NSString *isNewArrival = [attributes valueForKey:kJSONProdAttrNewArrival];
+                currProduct.isNewArrival = [isNewArrival boolValue];
+                
+                currProduct.price = [dict valueForKey:kJSONProdPrice];
+                
+                [products addObject:currProduct];
+                NSArray *imgPath = [NSArray arrayWithArray:[dict valueForKey:kJSONProdImagePath]];
+                NSURLComponents *urlComponent = [[NSURLComponents alloc] initWithString:imgPath[0]];
+                urlComponent.scheme = @"http";
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            complition(products);
-        });
+                currProduct.imageURL = urlComponent.URL;
+                
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                complition(products);
+            });
+        } 
     }];
     
     [dataTask resume];

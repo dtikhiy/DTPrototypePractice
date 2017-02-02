@@ -12,6 +12,8 @@
 
 @implementation DTNProdListPresenter
 
+#pragma mark - Viper Presenter
+
 -(void) fetchedProductsFromAPI:(NSArray *)products {
     if (products.count == 0) {
         [self.userInterface showNoProductsPopupMessage];

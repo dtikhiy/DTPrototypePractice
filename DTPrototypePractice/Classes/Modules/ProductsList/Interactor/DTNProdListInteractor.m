@@ -12,6 +12,8 @@
 
 @implementation DTNProdListInteractor
 
+#pragma mark - Viper Interactor
+
 -(void) fetchProductsFromAPI {
     
     DTNAPIDataProvider *api = [[DTNAPIDataProvider alloc] init];

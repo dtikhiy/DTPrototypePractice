@@ -22,17 +22,40 @@ static NSString * const reuseIdentifier = @"ProductCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Setup collection
-    self.collectionView.backgroundColor = [UIColor whiteColor];
-    
-    // Register cell classes
-     [self.collectionView registerNib:[UINib nibWithNibName:@"DTNProductCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+    [self configureView];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
     [self.eventHandler updateData];
+}
+
+#pragma mark - Viper View
+
+-(void) configureView {
+    // Setup collection
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    
+    // Register cell classes
+    [self.collectionView registerNib:[UINib nibWithNibName:@"DTNProductCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+}
+
+-(void) updateProductWithData:(NSArray*) products {
+    self.productsData = products;
+    
+    [self.collectionView reloadData];
+}
+
+-(void) showNoProductsPopupMessage {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Response is empty"
+                                                                   message:@"API returned no products."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:action];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -48,7 +71,8 @@ static NSString * const reuseIdentifier = @"ProductCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DTNProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     DTNProduct *prod = [self.productsData objectAtIndex:indexPath.row];
-    [cell updateCellWithProduct:prod];
+    
+    [cell updateCellWithProductData:prod];
     
     return cell;
 }
@@ -69,25 +93,5 @@ static NSString * const reuseIdentifier = @"ProductCell";
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(10, 10, 10, 10);
 }
-
-#pragma mark - Viper
-
--(void) showNoProductsPopupMessage {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Response is empty"
-                                                                   message:@"API returned no products."
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-    
-    [alert addAction:action];
-    
-    [self presentViewController:alert animated:YES completion:nil];
-}
-
--(void) updateProductWithData:(NSArray*) products {
-    self.productsData = products;
-    
-    [self.collectionView reloadData];
-}
-
 
 @end
