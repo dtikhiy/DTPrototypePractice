@@ -13,7 +13,7 @@
 
 @interface DTNProductListVC : UICollectionViewController
 
-@property (nonatomic, strong) id<DTNProdListModuleInterface>    eventHandler;
+@property (nonatomic, strong) id<DTNProdListModuleInterface> eventHandler;
 
 -(void) showNoProductsPopupMessage;
 -(void) updateProductWithData:(NSArray*) product;

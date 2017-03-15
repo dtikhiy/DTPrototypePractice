@@ -13,10 +13,9 @@
 
 @interface DTNProduct : NSObject
 
-@property (strong, nonatomic) NSString *prodName;
+@property (copy, nonatomic) NSString *prodName;
 @property (assign, nonatomic) BOOL isNewArrival;
-@property (assign, nonatomic) DTNProdInfoLabelTypes infoLabel;
 @property (strong, nonatomic) NSURL *imageURL;
-@property (strong, nonatomic) NSString *price;
+@property (copy, nonatomic) NSString *price;
 
 @end

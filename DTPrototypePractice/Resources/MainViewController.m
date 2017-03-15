@@ -28,7 +28,7 @@
 
 -(void) handleTapGesture: (UITapGestureRecognizer*) sender {
     
-    DTNProductListVC *productsView = [[DTNProductListVC alloc] initWithNibName: @"DTNProductListVC" bundle:nil];
+    DTNProductListVC *productsView = [[DTNProductListVC alloc] initWithNibName:NSStringFromClass([DTNProductListVC class]) bundle:nil];
     self.prodListModule = [[ProductListModuleAssembler alloc] initWithVC:productsView];
     [self showViewController:productsView sender:self];
 }

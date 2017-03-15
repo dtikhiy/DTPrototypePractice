@@ -34,11 +34,8 @@ static NSString * const reuseIdentifier = @"ProductCell";
 #pragma mark - Viper View
 
 -(void) configureView {
-    // Setup collection
-    self.collectionView.backgroundColor = [UIColor whiteColor];
-    
     // Register cell classes
-    [self.collectionView registerNib:[UINib nibWithNibName:@"DTNProductCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DTNProductCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
 }
 
 -(void) updateProductWithData:(NSArray*) products {
