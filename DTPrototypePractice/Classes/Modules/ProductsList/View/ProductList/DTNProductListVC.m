@@ -8,8 +8,6 @@
 
 #import "DTNProductListVC.h"
 #import "DTNProductCell.h"
-#import "DTNAPIDataProvider.h"
-#import "DTNProduct.h"
 
 @interface DTNProductListVC () <UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) NSArray *productsData;
@@ -25,26 +23,25 @@ static NSString * const reuseIdentifier = @"ProductCell";
     [self configureView];
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-    [self.eventHandler updateData];
+    [self.presenter updateData];
 }
 
 #pragma mark - Viper View
 
--(void) configureView {
+- (void)configureView {
     // Register cell classes
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DTNProductCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
 }
 
--(void) updateProductWithData:(NSArray*) products {
+- (void)updateProductWithData:(NSArray*) products {
     self.productsData = products;
     
     [self.collectionView reloadData];
 }
 
--(void) showNoProductsPopupMessage {
+- (void)displayNoProductsAlertMessage {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Response is empty"
                                                                    message:@"API returned no products."
                                                             preferredStyle:UIAlertControllerStyleAlert];
@@ -67,7 +64,7 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DTNProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    DTNProduct *prod = [self.productsData objectAtIndex:indexPath.row];
+    ProductResponseModel *prod = [self.productsData objectAtIndex:indexPath.row];
     
     [cell updateCellWithProductData:prod];
     

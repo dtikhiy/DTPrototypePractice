@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@class DTNProdListPresenter;
+#import "DTNProductListProtocols.h"
 
-@interface DTNProdListWireframe : NSObject
+@class DTNProductListVC;
 
-@property (weak, nonatomic) DTNProdListPresenter *presenter;
+@interface DTNProdListWireframe : NSObject<DTNProductListWireframeProtocol>
+
+@property (weak, nonatomic) DTNProductListVC *view;
+
++ (void)presentScreenFromViewController:(UIViewController *) viewController;
 
 @end

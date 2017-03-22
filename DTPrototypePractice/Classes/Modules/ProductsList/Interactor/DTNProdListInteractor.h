@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DTNProductListProtocols.h"
+
 @class DTNProdListPresenter;
 
-@interface DTNProdListInteractor : NSObject
+@interface DTNProdListInteractor : NSObject<DTNProductListInteractorProtocol>
 
-@property (weak, nonatomic) DTNProdListPresenter *presenter;
+@property (weak, nonatomic) id<DTNProductListPresenterProtocol> presenter;
 
--(void) fetchProductsFromAPI;
+- (void)fetchProductsFromAPI;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class DTNProduct;
+@class ProductResponseModel;
 
 @interface DTNProductCell : UICollectionViewCell
 
@@ -20,6 +20,6 @@
 
 @property (assign, nonatomic) BOOL isNewArrival;
 
-- (void) updateCellWithProductData:(DTNProduct*) product;
+- (void) updateCellWithProductData:(ProductResponseModel*) product;
 
 @end

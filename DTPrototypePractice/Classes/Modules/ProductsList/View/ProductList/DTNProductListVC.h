@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DTNProdListPresenter.h"
-#import "DTNProdListModuleInterface.h"
+#import "DTNProductListProtocols.h"
 
+@class DTNProdListPresenter;
 
-@interface DTNProductListVC : UICollectionViewController
+@interface DTNProductListVC : UICollectionViewController<DTNProductListViewProtocol>
 
-@property (nonatomic, strong) id<DTNProdListModuleInterface> eventHandler;
+@property (strong, nonatomic) id<DTNProductListPresenterProtocol> presenter;
 
--(void) showNoProductsPopupMessage;
--(void) updateProductWithData:(NSArray*) product;
+- (void)displayNoProductsAlertMessage;
+- (void)updateProductWithData:(NSArray*) product;
 
 @end

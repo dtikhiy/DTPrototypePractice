@@ -10,6 +10,6 @@
 
 @interface UIImageView (CustomImage)
 
--(void) loadImageWith:(NSURL*) url;
+- (void)loadImageWith:(NSURL*) url;
 
 @end

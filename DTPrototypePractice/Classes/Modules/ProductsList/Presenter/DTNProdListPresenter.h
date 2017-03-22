@@ -7,17 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DTNProdListInteractorOutput.h"
-#import "DTNProdListModuleInterface.h"
+#import "DTNProductListProtocols.h"
 
-@class DTNProdListInteractor;
-@class DTNProdListWireframe;
-@class DTNProductListVC;
+@interface DTNProdListPresenter : NSObject<DTNProductListPresenterProtocol>
 
-@interface DTNProdListPresenter : NSObject <DTNProdListInteractorOutput, DTNProdListModuleInterface>
-
-@property (strong, nonatomic) DTNProdListInteractor *interactor;
-@property (strong, nonatomic) DTNProdListWireframe *wireframe;
-@property (strong, nonatomic) DTNProductListVC *userInterface;
+@property (strong, nonatomic) id<DTNProductListInteractorProtocol> interactor;
+@property (strong, nonatomic) id<DTNProductListWireframeProtocol> wireframe;
+@property (weak, nonatomic) id<DTNProductListViewProtocol> view;
 
 @end

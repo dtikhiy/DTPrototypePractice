@@ -7,19 +7,20 @@
 //
 
 #import "DTNProdListInteractor.h"
-#import "DTNAPIDataProvider.h"
-#import "DTNProdListPresenter.h"
+#import "APIProductClient.h"
+#import "JSONProductResponseParser.h"
+#import "DTNProductEntity.h"
 
 @implementation DTNProdListInteractor
 
 #pragma mark - Viper Interactor
 
--(void) fetchProductsFromAPI {
+- (void)fetchProductsFromAPI {
     
-    DTNAPIDataProvider *api = [[DTNAPIDataProvider alloc] init];
+    APIProductClient *api = [[APIProductClient alloc] initWithJSONParser:[JSONProductResponseParser new]];
     
-    [api  fetchProductsFromStorage:^(NSArray *pr) {
-        [self.presenter fetchedProductsFromAPI:pr];
+    [api  fetchProductsFromServer:^(NSArray *products) {
+        [self.presenter fetchedProductsFromAPI:products];
     }];
 }
 

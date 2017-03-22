@@ -7,26 +7,24 @@
 //
 
 #import "DTNProdListPresenter.h"
-#import "DTNProdListInteractor.h"
-#import "DTNProductListVC.h"
 
 @implementation DTNProdListPresenter
 
 #pragma mark - Viper Presenter
 
--(void) fetchedProductsFromAPI:(NSArray *)products {
+- (void)fetchedProductsFromAPI:(NSArray *)products {
     if (products.count == 0) {
-        [self.userInterface showNoProductsPopupMessage];
+        [self.view displayNoProductsAlertMessage];
     } else {
         [self updateInterfaceWithData:products];
     }
 }
 
--(void) updateInterfaceWithData:(NSArray*) products {
-    [self.userInterface updateProductWithData:products];
+- (void)updateInterfaceWithData:(NSArray*) products {
+    [self.view updateProductWithData:products];
 }
 
--(void) updateData {
+- (void)updateData {
     [self.interactor fetchProductsFromAPI];
 }
 

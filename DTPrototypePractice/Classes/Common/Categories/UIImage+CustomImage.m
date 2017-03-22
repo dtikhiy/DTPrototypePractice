@@ -10,18 +10,19 @@
 
 @implementation UIImageView (CustomImage)
 
--(void) loadImageWith:(NSURL*) url {
+- (void)loadImageWith:(NSURL*) url {
     [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        if (!error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIImage *image = [UIImage imageWithData:data];
-                self.image = image;
-            });
-        } else {
-            
+        if (error) {
+            NSLog(@"dataTaskWithRequest error: %@", error);
+            return;
         }
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImage *image = [UIImage imageWithData:data];
+            self.image = image;
+        });
+    
     }] resume];
 }
 

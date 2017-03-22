@@ -7,17 +7,9 @@
 //
 
 #import "MainViewController.h"
-#import "DTNProductListVC.h"
-#import "ProductListModuleAssembler.h"
-
-@interface MainViewController ()
-
-@property (strong, nonatomic) ProductListModuleAssembler *prodListModule;
-
-@end
+#import "DTNProdListWireframe.h"
 
 @implementation MainViewController
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,10 +19,7 @@
 }
 
 -(void) handleTapGesture: (UITapGestureRecognizer*) sender {
-    
-    DTNProductListVC *productsView = [[DTNProductListVC alloc] initWithNibName:NSStringFromClass([DTNProductListVC class]) bundle:nil];
-    self.prodListModule = [[ProductListModuleAssembler alloc] initWithVC:productsView];
-    [self showViewController:productsView sender:self];
+    [DTNProdListWireframe presentScreenFromViewController:self];
 }
 
 @end
