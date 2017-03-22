@@ -19,13 +19,14 @@
 		222EA63A1E32E01B00415F2D /* DTNProductListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222EA6381E32E01B00415F2D /* DTNProductListVC.xib */; };
 		222EA63E1E32E04500415F2D /* DTNProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA63C1E32E04500415F2D /* DTNProductCell.m */; };
 		222EA63F1E32E04500415F2D /* DTNProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222EA63D1E32E04500415F2D /* DTNProductCell.xib */; };
-		222EA6461E347B2C00415F2D /* DTNProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 222EA6451E347B2C00415F2D /* DTNProduct.m */; };
-		2275B4E41E3B2D3700360514 /* DTNAPIDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275B4E31E3B2D3700360514 /* DTNAPIDataProvider.m */; };
 		2275B5061E3F14BE00360514 /* DTNProdListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275B5051E3F14BE00360514 /* DTNProdListPresenter.m */; };
 		2275B5091E3F14CE00360514 /* DTNProdListInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275B5081E3F14CE00360514 /* DTNProdListInteractor.m */; };
 		2275B50C1E3F14E700360514 /* DTNProdListWireframe.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275B50B1E3F14E700360514 /* DTNProdListWireframe.m */; };
-		2275B50F1E41A6BD00360514 /* ProductListModuleAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2275B50E1E41A6BD00360514 /* ProductListModuleAssembler.m */; };
 		22A8921A1E37398500C2625A /* UIImage+CustomImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22A892191E37398500C2625A /* UIImage+CustomImage.m */; };
+		22B7D9731E8249FB00691F35 /* APIProductClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D9721E8249FB00691F35 /* APIProductClient.m */; };
+		22B7D9781E824ACE00691F35 /* JSONProductResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D9771E824ACE00691F35 /* JSONProductResponseParser.m */; };
+		22B7D97B1E824BC800691F35 /* ProductResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D97A1E824BC800691F35 /* ProductResponseModel.m */; };
+		22CCDD321E654FC100B840F6 /* DTNProductEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CCDD311E654FC100B840F6 /* DTNProductEntity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,24 +69,25 @@
 		222EA63B1E32E04500415F2D /* DTNProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProductCell.h; sourceTree = "<group>"; };
 		222EA63C1E32E04500415F2D /* DTNProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProductCell.m; sourceTree = "<group>"; };
 		222EA63D1E32E04500415F2D /* DTNProductCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DTNProductCell.xib; sourceTree = "<group>"; };
-		222EA6441E347B2C00415F2D /* DTNProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProduct.h; sourceTree = "<group>"; };
-		222EA6451E347B2C00415F2D /* DTNProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProduct.m; sourceTree = "<group>"; };
-		222EA64B1E3480E400415F2D /* DTNProdInfoLabelTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DTNProdInfoLabelTypes.h; sourceTree = "<group>"; };
-		2275B4E11E3B2CA000360514 /* DTNProductsFetching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProductsFetching.h; sourceTree = "<group>"; };
-		2275B4E21E3B2D3700360514 /* DTNAPIDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNAPIDataProvider.h; sourceTree = "<group>"; };
-		2275B4E31E3B2D3700360514 /* DTNAPIDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNAPIDataProvider.m; sourceTree = "<group>"; };
 		2275B5041E3F14BE00360514 /* DTNProdListPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProdListPresenter.h; sourceTree = "<group>"; };
 		2275B5051E3F14BE00360514 /* DTNProdListPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProdListPresenter.m; sourceTree = "<group>"; };
 		2275B5071E3F14CE00360514 /* DTNProdListInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProdListInteractor.h; sourceTree = "<group>"; };
 		2275B5081E3F14CE00360514 /* DTNProdListInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProdListInteractor.m; sourceTree = "<group>"; };
 		2275B50A1E3F14E700360514 /* DTNProdListWireframe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProdListWireframe.h; sourceTree = "<group>"; };
 		2275B50B1E3F14E700360514 /* DTNProdListWireframe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProdListWireframe.m; sourceTree = "<group>"; };
-		2275B50D1E41A6BD00360514 /* ProductListModuleAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListModuleAssembler.h; sourceTree = "<group>"; };
-		2275B50E1E41A6BD00360514 /* ProductListModuleAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListModuleAssembler.m; sourceTree = "<group>"; };
 		22A892181E37398500C2625A /* UIImage+CustomImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CustomImage.h"; sourceTree = "<group>"; };
 		22A892191E37398500C2625A /* UIImage+CustomImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CustomImage.m"; sourceTree = "<group>"; };
-		22ED17E21E41B62E00F015A9 /* DTNProdListInteractorOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProdListInteractorOutput.h; sourceTree = "<group>"; };
-		22ED17E41E41C15300F015A9 /* DTNProdListModuleInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProdListModuleInterface.h; sourceTree = "<group>"; };
+		22B7D96F1E823A3400691F35 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		22B7D9701E823AEE00691F35 /* DTNProductListProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProductListProtocols.h; sourceTree = "<group>"; };
+		22B7D9711E8249FB00691F35 /* APIProductClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIProductClient.h; sourceTree = "<group>"; };
+		22B7D9721E8249FB00691F35 /* APIProductClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIProductClient.m; sourceTree = "<group>"; };
+		22B7D9751E824A6200691F35 /* ProductResponseParserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductResponseParserProtocol.h; sourceTree = "<group>"; };
+		22B7D9761E824ACE00691F35 /* JSONProductResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONProductResponseParser.h; sourceTree = "<group>"; };
+		22B7D9771E824ACE00691F35 /* JSONProductResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONProductResponseParser.m; sourceTree = "<group>"; };
+		22B7D9791E824BC800691F35 /* ProductResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductResponseModel.h; sourceTree = "<group>"; };
+		22B7D97A1E824BC800691F35 /* ProductResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductResponseModel.m; sourceTree = "<group>"; };
+		22CCDD301E654FC100B840F6 /* DTNProductEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProductEntity.h; sourceTree = "<group>"; };
+		22CCDD311E654FC100B840F6 /* DTNProductEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProductEntity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,18 +186,11 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		222EA6471E34805A00415F2D /* Enumerations */ = {
-			isa = PBXGroup;
-			children = (
-				222EA64B1E3480E400415F2D /* DTNProdInfoLabelTypes.h */,
-			);
-			path = Enumerations;
-			sourceTree = "<group>";
-		};
 		2275B4DC1E3B1E2200360514 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				2275B4DD1E3B269100360514 /* Common */,
+				22CCDD2C1E654E3800B840F6 /* Helpers */,
 				2275B4FB1E3F004E00360514 /* Modules */,
 			);
 			path = Classes;
@@ -204,8 +199,7 @@
 		2275B4DD1E3B269100360514 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2275B4E01E3B2B3E00360514 /* Store */,
-				222EA6471E34805A00415F2D /* Enumerations */,
+				2275B4E01E3B2B3E00360514 /* Services */,
 				2275B4DF1E3B287100360514 /* Models */,
 				2275B4DE1E3B26A900360514 /* Categories */,
 			);
@@ -224,20 +218,21 @@
 		2275B4DF1E3B287100360514 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				222EA6441E347B2C00415F2D /* DTNProduct.h */,
-				222EA6451E347B2C00415F2D /* DTNProduct.m */,
+				22B7D9791E824BC800691F35 /* ProductResponseModel.h */,
+				22B7D97A1E824BC800691F35 /* ProductResponseModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		2275B4E01E3B2B3E00360514 /* Store */ = {
+		2275B4E01E3B2B3E00360514 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				2275B4E11E3B2CA000360514 /* DTNProductsFetching.h */,
-				2275B4E21E3B2D3700360514 /* DTNAPIDataProvider.h */,
-				2275B4E31E3B2D3700360514 /* DTNAPIDataProvider.m */,
+				22B7D9741E824A5100691F35 /* Protocols */,
+				22B7D97C1E824E0600691F35 /* Parsers */,
+				22B7D9711E8249FB00691F35 /* APIProductClient.h */,
+				22B7D9721E8249FB00691F35 /* APIProductClient.m */,
 			);
-			path = Store;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		2275B4FB1E3F004E00360514 /* Modules */ = {
@@ -251,22 +246,14 @@
 		2275B4FC1E3F008A00360514 /* ProductsList */ = {
 			isa = PBXGroup;
 			children = (
+				22CCDD2A1E654E0F00B840F6 /* Protocols */,
+				22CCDD2B1E654E2500B840F6 /* Entities */,
 				2275B4FF1E3F02BD00360514 /* Presenter */,
 				2275B5001E3F02D100360514 /* Interactor */,
 				2275B5011E3F02EE00360514 /* Router */,
 				2275B4FE1E3F02AA00360514 /* View */,
-				2275B4FD1E3F027A00360514 /* Assembly */,
 			);
 			path = ProductsList;
-			sourceTree = "<group>";
-		};
-		2275B4FD1E3F027A00360514 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				2275B50D1E41A6BD00360514 /* ProductListModuleAssembler.h */,
-				2275B50E1E41A6BD00360514 /* ProductListModuleAssembler.m */,
-			);
-			path = Assembly;
 			sourceTree = "<group>";
 		};
 		2275B4FE1E3F02AA00360514 /* View */ = {
@@ -283,7 +270,6 @@
 			children = (
 				2275B5041E3F14BE00360514 /* DTNProdListPresenter.h */,
 				2275B5051E3F14BE00360514 /* DTNProdListPresenter.m */,
-				22ED17E41E41C15300F015A9 /* DTNProdListModuleInterface.h */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -293,7 +279,6 @@
 			children = (
 				2275B5071E3F14CE00360514 /* DTNProdListInteractor.h */,
 				2275B5081E3F14CE00360514 /* DTNProdListInteractor.m */,
-				22ED17E21E41B62E00F015A9 /* DTNProdListInteractorOutput.h */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -325,6 +310,49 @@
 				222EA63D1E32E04500415F2D /* DTNProductCell.xib */,
 			);
 			path = ProductCell;
+			sourceTree = "<group>";
+		};
+		22B7D9741E824A5100691F35 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				22B7D9751E824A6200691F35 /* ProductResponseParserProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		22B7D97C1E824E0600691F35 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				22B7D9761E824ACE00691F35 /* JSONProductResponseParser.h */,
+				22B7D9771E824ACE00691F35 /* JSONProductResponseParser.m */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		22CCDD2A1E654E0F00B840F6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				22B7D9701E823AEE00691F35 /* DTNProductListProtocols.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		22CCDD2B1E654E2500B840F6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				22CCDD301E654FC100B840F6 /* DTNProductEntity.h */,
+				22CCDD311E654FC100B840F6 /* DTNProductEntity.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		22CCDD2C1E654E3800B840F6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				22B7D96F1E823A3400691F35 /* Constants.h */,
+			);
+			name = Helpers;
+			path = Modules/ProductsList/Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -465,16 +493,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2275B4E41E3B2D3700360514 /* DTNAPIDataProvider.m in Sources */,
 				22A8921A1E37398500C2625A /* UIImage+CustomImage.m in Sources */,
+				22B7D9781E824ACE00691F35 /* JSONProductResponseParser.m in Sources */,
 				2275B5091E3F14CE00360514 /* DTNProdListInteractor.m in Sources */,
-				222EA6461E347B2C00415F2D /* DTNProduct.m in Sources */,
-				2275B50F1E41A6BD00360514 /* ProductListModuleAssembler.m in Sources */,
+				22B7D9731E8249FB00691F35 /* APIProductClient.m in Sources */,
 				222EA6391E32E01B00415F2D /* DTNProductListVC.m in Sources */,
 				2275B5061E3F14BE00360514 /* DTNProdListPresenter.m in Sources */,
 				2275B50C1E3F14E700360514 /* DTNProdListWireframe.m in Sources */,
 				222EA63E1E32E04500415F2D /* DTNProductCell.m in Sources */,
 				222EA5FA1E32DA5800415F2D /* AppDelegate.m in Sources */,
+				22B7D97B1E824BC800691F35 /* ProductResponseModel.m in Sources */,
+				22CCDD321E654FC100B840F6 /* DTNProductEntity.m in Sources */,
 				222EA6311E32DF1100415F2D /* MainViewController.m in Sources */,
 				222EA5F71E32DA5800415F2D /* main.m in Sources */,
 			);
@@ -573,7 +602,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -615,7 +644,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -629,7 +658,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EXA34F332D;
 				INFOPLIST_FILE = DTPrototypePractice/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DTN.DTPrototypePractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -642,7 +671,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EXA34F332D;
 				INFOPLIST_FILE = DTPrototypePractice/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DTN.DTPrototypePractice;
 				PRODUCT_NAME = "$(TARGET_NAME)";

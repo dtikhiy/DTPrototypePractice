@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,23 +27,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="16A-zm-2kz">
-                                <rect key="frame" x="177" y="323" width="20" height="20"/>
-                                <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="qEL-rb-dmH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4qP-3t-pmz"/>
-                            <constraint firstItem="16A-zm-2kz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TCX-25-4Hd"/>
                             <constraint firstItem="qEL-rb-dmH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eik-gX-fld"/>
-                            <constraint firstItem="16A-zm-2kz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w00-pf-TFh"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="loadingIndicator" destination="16A-zm-2kz" id="hc8-qH-sGd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
