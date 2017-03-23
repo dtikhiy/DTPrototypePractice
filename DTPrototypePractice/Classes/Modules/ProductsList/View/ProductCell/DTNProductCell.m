@@ -7,7 +7,7 @@
 //
 
 #import "DTNProductCell.h"
-#import "ProductResponseModel.h"
+#import "DTNProductEntity.h"
 #import "UIImage+CustomImage.h"
 
 @implementation DTNProductCell
@@ -23,7 +23,7 @@
     }
 }
 
-- (void) updateCellWithProductData:(ProductResponseModel *) product {
+- (void) updateCellWithProductData:(DTNProductEntity *) product {
     self.priceLabel.text = product.price;
     self.displaynameLabel.text = product.productName;
     [self.productImage loadImageWith:product.imageURL];

@@ -20,7 +20,7 @@
     return self;
 }
 
-- (void)fetchProductsFromServer:(void (^) (NSArray*)) complition {
+- (void)fetchProductsFromServer:(void (^) (NSArray*))success failure:(void(^)(NSError* error))failure {
     NSURL *url = [NSURL URLWithString:kAEOProductsURL];
     NSURLSession *session = [NSURLSession sharedSession];
     
@@ -32,14 +32,14 @@
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
-            NSLog(@"dataTaskWithRequest error: %@", error);
+            failure(error);
             return;
         }
         
         NSArray*products = [self.parser parseProductsFrom:data];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            complition(products);
+            success(products);
         });
     }];
     

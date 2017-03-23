@@ -20,6 +20,8 @@
 - (void)updateData;
 - (void)updateInterfaceWithData:(NSArray*) products;
 - (void)fetchedProductsFromAPI:(NSArray *)products;
+- (void)errorHasOccuredWithMessage:(NSString *)message;
+- (NSArray *)createProductListEntiryFromResponseModel:(NSArray *)products;
 
 @end
 
@@ -31,7 +33,7 @@
 
 @protocol DTNProductListViewProtocol <NSObject>
 
-- (void)displayNoProductsAlertMessage;
+- (void)displayNoProductsAlertWith:(NSString *)message;
 - (void)updateProductWithData:(NSArray*) products;
 
 

@@ -15,7 +15,4 @@
 
 @property (strong, nonatomic) id<DTNProductListPresenterProtocol> presenter;
 
-- (void)displayNoProductsAlertMessage;
-- (void)updateProductWithData:(NSArray*) product;
-
 @end

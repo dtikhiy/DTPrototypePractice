@@ -9,11 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "DTNProductListProtocols.h"
 
-@class DTNProdListPresenter;
+@protocol APIServerProtocol;
 
 @interface DTNProdListInteractor : NSObject<DTNProductListInteractorProtocol>
 
 @property (weak, nonatomic) id<DTNProductListPresenterProtocol> presenter;
+@property (strong, nonatomic) id<APIServerProtocol> apiService;
 
 - (void)fetchProductsFromAPI;
 

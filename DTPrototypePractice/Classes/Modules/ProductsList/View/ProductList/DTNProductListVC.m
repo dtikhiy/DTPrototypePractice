@@ -8,19 +8,22 @@
 
 #import "DTNProductListVC.h"
 #import "DTNProductCell.h"
+#import "ProductListCollectionViewDataSource.h"
+#import "Constants.h"
 
 @interface DTNProductListVC () <UICollectionViewDelegateFlowLayout>
-@property (strong, nonatomic) NSArray *productsData;
+@property (strong, nonatomic) ProductListCollectionViewDataSource *collectionViewDataSource;
 @end
 
 @implementation DTNProductListVC
 
-static NSString * const reuseIdentifier = @"ProductCell";
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.collectionViewDataSource = [ProductListCollectionViewDataSource new];
+    
     [self configureView];
+    self.collectionView.dataSource = self.collectionViewDataSource;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -32,18 +35,18 @@ static NSString * const reuseIdentifier = @"ProductCell";
 
 - (void)configureView {
     // Register cell classes
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DTNProductCell class]) bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([DTNProductCell class]) bundle:nil] forCellWithReuseIdentifier:kProductListCellReuseIdentifier];
 }
 
 - (void)updateProductWithData:(NSArray*) products {
-    self.productsData = products;
+    self.collectionViewDataSource.content = products;
     
     [self.collectionView reloadData];
 }
 
-- (void)displayNoProductsAlertMessage {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Response is empty"
-                                                                   message:@"API returned no products."
+- (void)displayNoProductsAlertWith:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Fetch Error"
+                                                                   message:message
                                                             preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     
@@ -52,40 +55,15 @@ static NSString * const reuseIdentifier = @"ProductCell";
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-#pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.productsData count];
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    DTNProductCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    ProductResponseModel *prod = [self.productsData objectAtIndex:indexPath.row];
-    
-    [cell updateCellWithProductData:prod];
-    
-    return cell;
-}
-
 #pragma mark <UICollectionViewDelegateFlowLayout>
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     // Device screen size
     CGFloat width = [[UIScreen mainScreen] bounds].size.width;
-    CGFloat widthPadding = 15;
     CGFloat height = [[UIScreen mainScreen] bounds].size.height;
-    CGFloat heightPadding = 10;
     
     // Calculation of cell size
-    return CGSizeMake((width / 2) - widthPadding, (height / 2) - heightPadding);
-}
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(10, 10, 10, 10);
+    return CGSizeMake((width / 2) - kWidthPadding, (height / 2) - kHeightPadding);
 }
 
 @end

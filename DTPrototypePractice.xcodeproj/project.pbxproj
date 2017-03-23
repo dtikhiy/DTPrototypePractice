@@ -26,6 +26,7 @@
 		22B7D9731E8249FB00691F35 /* APIProductClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D9721E8249FB00691F35 /* APIProductClient.m */; };
 		22B7D9781E824ACE00691F35 /* JSONProductResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D9771E824ACE00691F35 /* JSONProductResponseParser.m */; };
 		22B7D97B1E824BC800691F35 /* ProductResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D97A1E824BC800691F35 /* ProductResponseModel.m */; };
+		22B7D9841E82685900691F35 /* ProductListCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B7D9831E82685900691F35 /* ProductListCollectionViewDataSource.m */; };
 		22CCDD321E654FC100B840F6 /* DTNProductEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CCDD311E654FC100B840F6 /* DTNProductEntity.m */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,9 @@
 		22B7D9771E824ACE00691F35 /* JSONProductResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONProductResponseParser.m; sourceTree = "<group>"; };
 		22B7D9791E824BC800691F35 /* ProductResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductResponseModel.h; sourceTree = "<group>"; };
 		22B7D97A1E824BC800691F35 /* ProductResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductResponseModel.m; sourceTree = "<group>"; };
+		22B7D9801E8263C600691F35 /* APIServerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIServerProtocol.h; sourceTree = "<group>"; };
+		22B7D9821E82685900691F35 /* ProductListCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductListCollectionViewDataSource.h; sourceTree = "<group>"; };
+		22B7D9831E82685900691F35 /* ProductListCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductListCollectionViewDataSource.m; sourceTree = "<group>"; };
 		22CCDD301E654FC100B840F6 /* DTNProductEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTNProductEntity.h; sourceTree = "<group>"; };
 		22CCDD311E654FC100B840F6 /* DTNProductEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTNProductEntity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -298,6 +302,8 @@
 				222EA6361E32E01B00415F2D /* DTNProductListVC.h */,
 				222EA6371E32E01B00415F2D /* DTNProductListVC.m */,
 				222EA6381E32E01B00415F2D /* DTNProductListVC.xib */,
+				22B7D9821E82685900691F35 /* ProductListCollectionViewDataSource.h */,
+				22B7D9831E82685900691F35 /* ProductListCollectionViewDataSource.m */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 		22B7D9741E824A5100691F35 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				22B7D9801E8263C600691F35 /* APIServerProtocol.h */,
 				22B7D9751E824A6200691F35 /* ProductResponseParserProtocol.h */,
 			);
 			name = Protocols;
@@ -504,6 +511,7 @@
 				222EA5FA1E32DA5800415F2D /* AppDelegate.m in Sources */,
 				22B7D97B1E824BC800691F35 /* ProductResponseModel.m in Sources */,
 				22CCDD321E654FC100B840F6 /* DTNProductEntity.m in Sources */,
+				22B7D9841E82685900691F35 /* ProductListCollectionViewDataSource.m in Sources */,
 				222EA6311E32DF1100415F2D /* MainViewController.m in Sources */,
 				222EA5F71E32DA5800415F2D /* main.m in Sources */,
 			);

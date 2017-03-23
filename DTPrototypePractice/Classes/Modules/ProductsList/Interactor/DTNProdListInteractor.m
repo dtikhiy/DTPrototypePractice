@@ -13,14 +13,14 @@
 
 @implementation DTNProdListInteractor
 
-#pragma mark - Viper Interactor
-
 - (void)fetchProductsFromAPI {
     
-    APIProductClient *api = [[APIProductClient alloc] initWithJSONParser:[JSONProductResponseParser new]];
+    self.apiService = [[APIProductClient alloc] initWithJSONParser:[JSONProductResponseParser new]];
     
-    [api  fetchProductsFromServer:^(NSArray *products) {
+    [self.apiService fetchProductsFromServer:^(NSArray *products) {
         [self.presenter fetchedProductsFromAPI:products];
+    } failure:^(NSError *error) {
+        [self.presenter errorHasOccuredWithMessage:@"Check your internet connection."];
     }];
 }
 

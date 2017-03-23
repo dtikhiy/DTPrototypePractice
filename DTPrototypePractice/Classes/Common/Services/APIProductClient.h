@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ProductResponseParserProtocol.h"
+#import "APIServerProtocol.h"
+
+@protocol ProductResponseParserProtocol;
 @class JSONProductResponseParser;
 
-@interface APIProductClient : NSObject
+@interface APIProductClient : NSObject<APIServerProtocol>
 
 @property (strong, nonatomic) id<ProductResponseParserProtocol> parser;
 
 - (instancetype)initWithJSONParser:(JSONProductResponseParser *) parser;
-- (void)fetchProductsFromServer:(void (^) (NSArray*)) complition;
 
 @end
